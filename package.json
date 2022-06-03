@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "ipapi.co": "^0.3.0",
+    "request": "^2.88.2"
+  },
+  "name": "telecom_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "bertini91",
+  "license": "ISC",
+  "description": ""
+}
