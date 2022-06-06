@@ -4,12 +4,13 @@ const {
   getClimateByCity,
   getClimaByDays,
 } = require("../controllers/climate.controller");
-const { checkIP } = require("../middlewares/ipapi");
+const { checkIP, checkReqIp } = require("../middlewares/ipapi");
+const { validateData } = require("../middlewares/validate-data");
 
 const router = Router();
 
-router.get("/location", checkIP, climateGet);
-router.get("/current", checkIP, getClimateByCity);
-router.get("/forecast", checkIP, getClimaByDays);
+router.get("/location", [checkIP, checkReqIp], climateGet);
+router.get("/current", [checkIP, validateData], getClimateByCity);
+router.get("/forecast", [checkIP, validateData], getClimaByDays);
 
 module.exports = router;

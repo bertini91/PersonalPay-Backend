@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -13,7 +15,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/api.test.js --exit",
     "start": "node app",
     "dev": "nodemon app"
   },

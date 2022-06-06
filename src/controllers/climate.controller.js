@@ -7,9 +7,10 @@ const climateGet = (req, res) => {
   request(urlOW, (err, response, body) => {
     if (err) {
       console.log("error:", err);
-      res.status(500).json({ error: "Problema en el servidor" });
+      res.status(500).json({ error: "An error occurred on the server" });
     } else {
-      res.json(JSON.parse(body));
+      body = JSON.parse(body);
+      res.status(Number(body.cod)).json(body);
     }
   });
 };
@@ -28,9 +29,10 @@ const getClimateByCity = (req, res) => {
   request(urlOW, (err, response, body) => {
     if (err) {
       console.log("error:", err);
-      res.status(500).json({ error: "Problema en el servidor" });
+      res.status(500).json({ error: "An error occurred on the server" });
     } else {
-      res.json(JSON.parse(body));
+      body = JSON.parse(body);
+      res.status(Number(body.cod)).json(body);
     }
   });
 };
@@ -47,9 +49,10 @@ const getClimaByDays = (req, res) => {
   request(urlOW, (err, response, body) => {
     if (err) {
       console.log("error:", err);
-      res.status(500).json({ error: "Problema en el servidor" });
+      res.status(500).json({ error: "An error occurred on the server" });
     } else {
-      res.json(JSON.parse(body));
+      body = JSON.parse(body);
+      res.status(Number(body.cod)).json(body);
     }
   });
 };
