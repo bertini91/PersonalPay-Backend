@@ -1,4 +1,4 @@
-# Club La Nación
+# Personal Pay
 
 <p align="center"><a href="" target="_blank" ><img width="220" height="180"src="./public/Logo.png" alt="logo" style="max-width: 100%;background-color: #008dff;border-radius: 10px;padding: 5px;"></a></p>
 
