@@ -3,7 +3,7 @@ const apiKey = process.env.KEY_OW;
 
 const climateGet = (req, res) => {
   const { lang = "en" } = req.query;
-  const urlOW = `${process.env.URL_OW}/weather?lat=${req.profile.latitude}&lon=${req.profile.longitude}&appid=${apiKey}&lang=${lang}`;
+  const urlOW = `${process.env.URL_OW}/weather?lat=${req.profile.latitude}&lon=${req.profile.longitude}&units=metric&appid=${apiKey}&lang=${lang}`;
   request(urlOW, (err, response, body) => {
     if (err) {
       console.log("error:", err);
@@ -22,9 +22,9 @@ const getClimateByCity = (req, res) => {
     urlOW = `${process.env.URL_OW}/weather?q=${normalizeCity.replace(
       /\s/g,
       "%20"
-    )}&appid=${apiKey}&lang=${lang}`;
+    )}&units=metric&appid=${apiKey}&lang=${lang}`;
   } else {
-    urlOW = `${process.env.URL_OW}/weather?lat=${req.profile.latitude}&lon=${req.profile.longitude}&appid=${apiKey}&lang=${lang}`;
+    urlOW = `${process.env.URL_OW}/weather?lat=${req.profile.latitude}&lon=${req.profile.longitude}&units=metric&appid=${apiKey}&lang=${lang}`;
   }
   request(urlOW, (err, response, body) => {
     if (err) {
@@ -45,7 +45,7 @@ const getClimaByDays = (req, res) => {
   const urlOW = `${process.env.URL_OW}/forecast?q=${normalizeCity.replace(
     /\s/g,
     "%20"
-  )}&appid=${apiKey}&cnt=${days}&lang=${lang}`;
+  )}&units=metric&appid=${apiKey}&cnt=${days}&lang=${lang}`;
   request(urlOW, (err, response, body) => {
     if (err) {
       console.log("error:", err);
